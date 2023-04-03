@@ -12,12 +12,12 @@ pipeline {
         }
 
         stage('Run Tests') {
-            agent {
-                docker {
-                    image 'my-ui-tests'
-                    args '-v /usr/local/bin/docker:/usr/bin/docker --group-add docker'
+                agent {
+                    docker {
+                        image 'my-ui-tests:latest'
+                        args '-v /usr/local/bin/docker:/usr/bin/docker --group-add docker'
+                    }
                 }
-            }
             steps {
                 script {
                     try {
