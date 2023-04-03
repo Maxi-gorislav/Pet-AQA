@@ -15,6 +15,7 @@ pipeline {
             agent {
                 docker {
                     image 'my-ui-tests'
+                    args '-v /usr/local/bin/docker:/usr/bin/docker --group-add docker'
                 }
             }
             steps {
