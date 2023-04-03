@@ -15,7 +15,7 @@ pipeline {
             agent {
                 docker {
                     image 'my-ui-tests'
-                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                    args '-v /usr/local/bin/docker:/usr/bin/docker'
                 }
             }
             steps {
