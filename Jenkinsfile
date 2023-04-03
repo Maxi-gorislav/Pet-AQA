@@ -1,3 +1,4 @@
+@Library('docker') _
 pipeline {
     environment {
         HEADLESS_MODE = 'true'
