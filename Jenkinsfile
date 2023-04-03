@@ -15,7 +15,6 @@ pipeline {
             agent {
                 docker {
                     image 'my-ui-tests'
-                    args '-v /usr/local/bin/docker:/usr/bin/docker'
                 }
             }
             steps {
