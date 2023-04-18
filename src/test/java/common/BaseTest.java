@@ -10,6 +10,4 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 @ExtendWith(CleanUpExtension.class)
 @Execution(ExecutionMode.SAME_THREAD)
 public class BaseTest {
-//    @RegisterExtension
-//    CleanUpExtension petRemoveExtension = new CleanUpExtension();
 }

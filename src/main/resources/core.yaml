@@ -1,6 +1,5 @@
 #FrontEnd
-hostUrl: https://demo-opencart.com/
-adminUiUrl: https://demo-opencart.com/admin
+uiUrl: https://dev.webmakers.com.ua/opencart/3.0.2.0/
 #Amadeus
 amadeusUrl: https://test.api.amadeus.com
 checkInLink: /v2/reference-data/urls

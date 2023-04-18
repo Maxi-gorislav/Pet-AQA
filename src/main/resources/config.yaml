@@ -1,0 +1,5 @@
+driverManager: true
+pollingInterval: 400
+timeout: 5000
+browserSize: "1920x1080"
+browser: "ui.CustomWebDriverProvider"

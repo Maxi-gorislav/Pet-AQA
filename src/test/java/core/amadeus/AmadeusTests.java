@@ -13,7 +13,7 @@ public class AmadeusTests extends BaseApiTests {
     public void verifyAddAmadeus() {
         new AmadeusController()
                 .withToken()
-                .getFlightDestination("BA")
+                .checkInLink("BA")
                 .expectedCode(HttpStatus.SC_OK)
                 .verifyContainsNotEmptyList();
     }

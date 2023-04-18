@@ -7,9 +7,14 @@ import java.util.Optional;
 @Log
 public class Conf {
     private static CoreConfig coreConfig;
+    private static UiConfig uiConfig;
 
     public static CoreConfig core() {
         return returnConfig(coreConfig, CoreConfig.class);
+    }
+
+    public static UiConfig browserConf() {
+        return returnConfig(uiConfig, UiConfig.class);
     }
 
     private static <T> T returnConfig(T conf, Class<T> type) {
