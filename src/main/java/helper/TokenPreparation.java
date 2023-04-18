@@ -11,11 +11,13 @@ import static io.restassured.RestAssured.given;
 public class TokenPreparation {
 
     public AmadeusToken signIn() {
+        String clientId = System.getenv("CLIENT_ID");
+        String clientSecret = System.getenv("CLIENT_SECRET");
         var result = given()
                 .baseUri(Conf.core().getAmadeusUrl())
                 .contentType(ContentType.URLENC)
-                .formParam("client_id", Conf.core().getClientId())
-                .formParam("client_secret", Conf.core().getSecretKey())
+                .formParam("client_id", clientId)
+                .formParam("client_secret", clientSecret)
                 .formParam("grant_type", "client_credentials")
                 .post("/v1/security/oauth2/token").jsonPath();
 
