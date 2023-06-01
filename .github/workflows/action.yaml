@@ -6,16 +6,6 @@ on:
       - main
 
 jobs:
-  checkstyle:
-    name: runner / checkstyle
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dbelyaev/action-checkstyle@v0.7.4
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          level: warning
   build:
     runs-on: ubuntu-latest
     steps:
@@ -71,4 +61,6 @@ jobs:
           state: 'success'
           sha: ${{github.event.pull_request.head.sha || github.sha}}
           target_url: https://maxi-gorislav.github.io/Pet-AQA/${{ github.run_number }}
+      - name: Check with Gradle
+        run: ./gradlew check
 
