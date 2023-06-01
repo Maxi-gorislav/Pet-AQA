@@ -6,8 +6,7 @@ apply from: "gradle/dependencies.gradle"
 apply plugin: 'checkstyle'
 
 checkstyle {
-    toolVersion = '8.36.1'
-    configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
+    configFile = file("${rootProject.rootDir}/config/checkstyle.xml")
     sourceSets = [sourceSets.main]
 }
 
@@ -15,7 +14,6 @@ check.dependsOn checkstyleMain
 
 allure {
     version = allureVer
-    boolean clean = true
     useJUnit5 {
         version = allureVer
     }
