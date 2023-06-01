@@ -3,6 +3,15 @@ plugins {
 }
 apply plugin: 'java'
 apply from: "gradle/dependencies.gradle"
+apply plugin: 'checkstyle'
+
+checkstyle {
+    toolVersion = '8.36.1'
+    configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
+    sourceSets = [sourceSets.main]
+}
+
+check.dependsOn checkstyleMain
 
 allure {
     version = allureVer
